@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="helper_nav_aside_counter_radius">3dp</dimen>
+
+</resources>

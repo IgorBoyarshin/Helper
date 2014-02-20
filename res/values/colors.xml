@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+
+    <color name="helper_testzoze_1">#CC0000</color>
+
+    <color name="helper_main_bg">#FF8800</color>
+    <color name="helper_calculator_bg">#FF8800</color>
+    <color name="helper_main_welcome">#FF7F50</color>
+
+    <color name="helper_memory_game_bg">#ccc</color>
+    <color name="helper_memory_game_desk">#c75841</color>
+    <color name="helper_memory_game_border">#c7ad87</color>
+
+    <color name="helper_memory_game_tile">#13ec00</color>
+    <color name="helper_memory_game_no_card">#ff82cc36</color>
+    <color name="helper_memory_game_card">#3b5eec</color>
+    <color name="helper_memory_game_lost">#aaff1111</color>
+    <color name="helper_memory_game_won">#ff3fca2b</color>
+
+    <color name="helper_function_drawing_area_bg">#F7E7CE</color>
+    <color name="helper_function_drawing_area_axes">#36454F</color>
+    <color name="helper_function_drawing_area_dots">#DE3163</color>
+
+    <color name="helper_nav_aside_bg_light">#222</color>
+    <color name="helper_nav_aside_list_bg_light">#F0F0F0</color>
+    <color name="helper_nav_aside_list_bg_pressed_light">#AFAFAF</color>
+    <color name="helper_nav_aside_list_item_title_light">#0F0F0F</color>
+
+    <color name="helper_nav_aside_divider_dark">#303030</color>
+    <color name="helper_nav_aside_bg_dark">#303030</color>
+    <color name="helper_nav_aside_list_bg_dark">#303030</color>
+    <color name="helper_nav_aside_list_bg_pressed_dark">#992416</color>
+    <color name="helper_nav_aside_list_item_title_dark">#c5c4c4</color>
+
+    <color name="helper_nav_aside_counter_text">#eee</color>
+    <color name="helper_nav_aside_counter_bg">#FF9A03</color>
+
+    <color name="test1">#EFDECD</color>
+    <color name="test2">#E52B50</color>
+
+</resources>

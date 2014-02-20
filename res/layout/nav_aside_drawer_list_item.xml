@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/nav_list_selector">
+
+    <ImageView
+            android:id="@+id/nav_aside_icon"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:contentDescription="@string/helper_desc_list_item_icon"
+            android:src="@drawable/ic_launcher"
+            android:layout_centerVertical="true" />
+
+    <TextView
+            android:id="@+id/nav_aside_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/nav_aside_icon"
+            android:minHeight="?android:attr/listPreferredItemHeightSmall"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+            android:textColor="@color/helper_nav_aside_list_item_title_dark"
+            android:gravity="center_vertical"
+            android:paddingRight="40dp"/>
+
+    <TextView
+            android:textStyle="bold"
+            android:background="@drawable/nav_counter_bg"
+            android:id="@+id/nav_aside_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:textColor="@color/helper_nav_aside_counter_text"/>
+
+</RelativeLayout>

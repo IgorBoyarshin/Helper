@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:id="@+id/layout_function"   >
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:text="@string/helper_function_text_y_equals"
+                    android:textSize="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:textSize="20dp"
+                    android:hint="@string/helper_function_text_a"
+                    android:id="@+id/helper_function_x3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                   android:layout_width="wrap_content"
+                   android:textSize="20dp"
+                   android:layout_height="wrap_content"
+                   android:text="@string/helper_function_text_x3" />
+                <EditText
+                    android:textSize="20dp"
+                    android:hint="@string/helper_function_text_b"
+                    android:id="@+id/helper_function_text_x2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="@string/helper_function_text_x2" />
+                <EditText
+                    android:textSize="20dp"
+                    android:hint="@string/helper_function_text_c"
+                    android:id="@+id/helper_function_text_x"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="@string/helper_function_text_x" />
+                <EditText
+                    android:textSize="20dp"
+                    android:hint="@string/helper_function_text_d"
+                    android:id="@+id/helper_function_text_d"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <Button
+                android:text="@string/helper_function_draw_button"
+                android:id="@+id/helper_function_button_draw"
+                android:onClick="render"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        <view
+                class="com.whatever.helper.FunctionView"
+                android:id="@+id/helper_function_drawing_area"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+</LinearLayout>
