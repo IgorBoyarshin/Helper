@@ -115,7 +115,7 @@
       <file leaf-file-name="Game.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/whatever/helper/memorygame/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="230" column="29" selection-start="7258" selection-end="7258" vertical-scroll-proportion="1.0431373" vertical-offset="3440" max-vertical-offset="6086">
+            <state line="225" column="47" selection-start="6998" selection-end="6998" vertical-scroll-proportion="0.70980394" vertical-offset="3440" max-vertical-offset="6086">
               <folding>
                 <element signature="method#flipAll#0;class#Game#0" expanded="false" />
                 <element signature="e#11666#11667#0" expanded="true" />
@@ -665,7 +665,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -680,7 +680,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3300813" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.54308945" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.54308945" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1094,7 +1094,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/whatever/helper/memorygame/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="230" column="29" selection-start="7258" selection-end="7258" vertical-scroll-proportion="1.0431373" vertical-offset="3440" max-vertical-offset="6086">
+        <state line="225" column="47" selection-start="6998" selection-end="6998" vertical-scroll-proportion="0.70980394" vertical-offset="3440" max-vertical-offset="6086">
           <folding>
             <element signature="method#flipAll#0;class#Game#0" expanded="false" />
             <element signature="e#11666#11667#0" expanded="true" />
