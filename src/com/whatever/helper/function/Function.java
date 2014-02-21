@@ -1,4 +1,4 @@
-package com.whatever.helper;
+package com.whatever.helper.function;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import com.whatever.helper.R;
 
 /**
  * Created by Igor on 06.02.14.
@@ -41,15 +42,4 @@ public class Function extends Fragment implements View.OnClickListener {
                 break;
         }
     }
-
-    public void render(View view) {
-
-        //EditText editText = (EditText) findViewById(R.id.helper_graphics_function);
-        //String func = editText.getText().toString();
-
-
-
-    }
-
-
 }

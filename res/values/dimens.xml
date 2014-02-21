@@ -3,4 +3,6 @@
 
     <dimen name="helper_nav_aside_counter_radius">3dp</dimen>
 
+    <dimen name="helper_mathbirds_textsize">20dp</dimen>
+
 </resources>

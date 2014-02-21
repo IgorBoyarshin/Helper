@@ -18,12 +18,6 @@ public class MemoryGame extends Fragment {
 
         View rootView = inflater.inflate(R.layout.layout_memory_game, container, false);
 
-        prepareViews(rootView);
-
         return rootView;
-    }
-
-    private void prepareViews(View v) {
-
     }
 }

@@ -16,9 +16,11 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import com.whatever.helper.mathbirds.MathBirds;
 import com.whatever.helper.memorygame.MemoryGame;
 import com.whatever.helper.navaside.adapter.NavAsideDrawerListAdapter;
 import com.whatever.helper.navaside.model.NavAsideDrawerItem;
+import com.whatever.helper.function.Function;
 
 import java.util.ArrayList;
 
@@ -73,8 +75,8 @@ public class MainHelper extends Activity {
         navDrawerItems.add(new NavAsideDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
         // Graphics
         navDrawerItems.add(new NavAsideDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1), true, "22"));
-        // Memory
-        //navDrawerItems.add(new NavAsideDrawerItem(navMenuTitles[4], navMenuIcons.getResourceId(4, -1)));
+        // MathBirds
+        navDrawerItems.add(new NavAsideDrawerItem(navMenuTitles[4], navMenuIcons.getResourceId(4, -1)));
 
 
         // Recycle the typed array
@@ -186,7 +188,7 @@ public class MainHelper extends Activity {
                 fragment = new Function();
                 break;
             case 4:
-
+                fragment = new MathBirds();
                 break;
 
             default:

@@ -28,9 +28,19 @@
     <string name="helper_calculator_button_clear">CLEAR</string>
     <string name="helper_calculator_button_delete">|=</string>
 
+    <string name="helper_mathbirds_button_1">1</string>
+    <string name="helper_mathbirds_button_2">2</string>
+    <string name="helper_mathbirds_button_3">3</string>
+    <string name="helper_mathbirds_button_4">4</string>
+    <string name="helper_mathbirds_button_5">5</string>
+    <string name="helper_mathbirds_button_6">6</string>
+    <string name="helper_mathbirds_button_7">7</string>
+    <string name="helper_mathbirds_button_8">8</string>
+    <string name="helper_mathbirds_button_9">9</string>
+    <string name="helper_mathbirds_button_0">0</string>
+
     <string name="helper_function_function_hint">Func</string>
     <string name="helper_function_draw_button">Draw</string>
-
     <string name="helper_function_text_y_equals">y =</string>
     <string name="helper_function_text_x3">x3 +</string>
     <string name="helper_function_text_a">a</string>
@@ -48,9 +58,9 @@
     <string-array name="nav_drawer_items">
         <item >Home</item>
         <item >Calculator</item>
-        <item >MemoryGame</item>
+        <item >Memory Game</item>
         <item >Function</item>
-        <item >Memory</item>
+        <item >Math Birds</item>
     </string-array>
 
     <!-- Nav Drawer List Item Icons -->

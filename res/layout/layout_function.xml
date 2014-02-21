@@ -66,7 +66,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         <view
-                class="com.whatever.helper.FunctionView"
+                class="com.whatever.helper.function.FunctionView"
                 android:id="@+id/helper_function_drawing_area"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />

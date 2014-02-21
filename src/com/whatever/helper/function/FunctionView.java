@@ -1,4 +1,4 @@
-package com.whatever.helper;
+package com.whatever.helper.function;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
+import com.whatever.helper.R;
 
 /**
  * Created by Igor on 06.02.14.

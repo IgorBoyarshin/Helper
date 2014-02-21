@@ -10,10 +10,13 @@
     <color name="helper_calculator_bg">#FF8800</color>
     <color name="helper_main_welcome">#FF7F50</color>
 
+    <color name="helper_mathbirds_bg">#ddd</color>
+    <color name="helper_mathbirds_button_bg">#ad11</color>
+    <color name="helper_mathbirds_button_text">#000</color>
+
     <color name="helper_memory_game_bg">#ccc</color>
     <color name="helper_memory_game_desk">#ff3f1907</color>
     <color name="helper_memory_game_border">#c7ad87</color>
-
     <color name="helper_memory_game_tile">#ffcc623b</color>
     <color name="helper_memory_game_no_card">#ddff951c</color>
     <color name="helper_memory_game_card">#3b5eec</color>
