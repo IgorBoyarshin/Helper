@@ -24,10 +24,6 @@ public class MemoryGameView extends View {
         game.changeParameters(h, w);
     }
 
-    public void inv() {
-        invalidate();
-    }
-
     public MemoryGameView(Context context) {
         super(context);
         this.context = context;

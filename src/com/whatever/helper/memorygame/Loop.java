@@ -19,9 +19,9 @@ public class Loop extends Thread {
     public void run() {
         while (true) {
             try {
-                Thread.sleep(33);
+                Thread.sleep(50);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+//                e.printStackTrace();
             }
 
 //            Log.d("-----------", "Here");

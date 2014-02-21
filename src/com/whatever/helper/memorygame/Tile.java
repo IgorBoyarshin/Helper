@@ -30,7 +30,7 @@ public class Tile {
 
         flipping = false;
         flipProgress = 0;
-        flipSpeed = 4;
+        flipSpeed = 6;
         flippedFaceUp = false;
         flippedOverHalf = false;
     }

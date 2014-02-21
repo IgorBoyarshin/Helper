@@ -19,7 +19,7 @@ public class Game {
     private int paddingTop;
 
     private Field field;
-    private int currentFieldSize;
+    private int currentMapSize;
     private int currentFieldSizePixels;
 
     private int currentState;
@@ -40,14 +40,6 @@ public class Game {
 
     private boolean touchEnabled;
 
-    private final int map1Size = 5;
-    private final int map1Amount = 13;
-    private final boolean map1[][];
-
-    private final int map2Size = 5;
-    private final int map2Amount = 8;
-    private final boolean map2[][] = new boolean[map2Size][map2Size];
-
     private int curLevel;
     private boolean currentMap[][];
     private int currentMapAmount;
@@ -55,23 +47,21 @@ public class Game {
     private int currentMapGuesses;
     private int currentMapCorrect;
 
-
     public Game(Context context, int windowHeight, int windowWidth) {
         this.context = context;
         h = windowHeight;
         w = windowWidth;
         paddingSmall = 50;
-        delayResultsShowing = 3000;
+        delayResultsShowing = 2000;
         delayBeforeLevel = 1000;
         delayShowing = 3000;
         delayStart = -1;
         curLevel = 0;
-        map1 = new boolean[map1Size][map1Size];
-
-
-        // TODO: make levels generator
-
-        prepareLevels();
+        currentState = STATE_OFF;
+        field = null;
+        lost = false;
+        won = false;
+        touchEnabled = false;
 
         if (h >= w) {
             currentFieldSizePixels = w - paddingSmall * 2;
@@ -84,95 +74,6 @@ public class Game {
         }
 
 //        field = new Field(context, 4, 100, paddingLeft, paddingTop, map1); // WRONG
-    }
-
-    private void prepareLevels() {
-        boolean t = true;
-        for (int i = 0; i < map1Size; i++) {
-            for (int j = 0; j < map1Size; j++) {
-                map1[i][j] = t;
-                t = !t;
-            }
-        }
-        currentState = STATE_OFF;
-    }
-
-    private void flipAll() {
-        for (int i = 0; i < currentFieldSize; i++) {
-            for (int j = 0; j < currentFieldSize; j++) {
-                field.flip(i, j);
-            }
-        }
-    }
-
-    private boolean[][] createNewLevel(int size, int amount) {
-        boolean map[][] = new boolean[size][size];
-
-        int history[][] = new int[amount][2];
-        int curH = 0;
-        boolean matched = false;
-
-        Random r = new Random();
-        int i = 0;
-        while (i < amount) {
-            i++;
-            int x = Math.abs(r.nextInt()) % size;
-            int y = Math.abs(r.nextInt()) % size;
-
-            int j = 0;
-            while (j < curH) {
-                if ((history[j][0] == x) && (history[j][1] == y)) {
-                    matched = true;
-                }
-                j++;
-            }
-
-            if (matched) {
-                i--;
-                continue;
-            } else {
-                map[x][y] = true;
-                history[i - 1][0] = x;
-                history[i - 1][1] = y;
-                curH++;
-            }
-            matched = false;
-        }
-
-        return map;
-    }
-
-    private void loadNextLevel() {
-        curLevel++;
-
-        currentMap = createNewLevel(5, 5);
-        currentMapAmount = 5;
-        currentFieldSize = 5;
-
-        playerCanPressThisTile = new boolean[currentFieldSize][currentFieldSize];
-        for (int i = 0; i < currentFieldSize; i++) {
-            for (int j = 0; j < currentFieldSize; j++) {
-                playerCanPressThisTile[i][j] = true;
-            }
-        }
-        currentMapGuesses = 0;
-        currentMapCorrect = 0;
-        won = false;
-        lost = false;
-        field = new Field(context, currentFieldSize, currentFieldSizePixels, paddingLeft, paddingTop, currentMap);
-    }
-
-    private void reloadLevel() {
-        for (int i = 0; i < currentFieldSize; i++) {
-            for (int j = 0; j < currentFieldSize; j++) {
-                playerCanPressThisTile[i][j] = true;
-            }
-        }
-        currentMapGuesses = 0;
-        currentMapCorrect = 0;
-        won = false;
-        lost = false;
-        field = new Field(context, currentFieldSize, currentFieldSizePixels, paddingLeft, paddingTop, currentMap);
     }
 
     private void update() {
@@ -209,7 +110,7 @@ public class Game {
                         delayStart = -1; // For later purposes
                         currentState++;
 
-                        touchEnabled = true; // TODO: md move to the game state
+                        touchEnabled = true; //  MB MOVE TO THE NEXT STATE..
                     }
                 }
                 break;
@@ -245,10 +146,96 @@ public class Game {
         }
     }
 
+    private void flipAll() {
+        for (int i = 0; i < currentMapSize; i++) {
+            for (int j = 0; j < currentMapSize; j++) {
+                field.flip(i, j);
+            }
+        }
+    }
+
+    private boolean[][] createNewLevel(int size, int amount) {
+        boolean map[][] = new boolean[size][size];
+
+//        map[1][0] = true;
+//        map[1][1] = true;
+//        map[1][2] = true;
+//        map[1][3] = true;
+//        map[1][4] = true;
+
+
+        int history[][] = new int[amount][2];
+        int curH = 0;
+        boolean matched = false;
+
+        Random r = new Random();
+        int i = 0;
+        while (i < amount) {
+            i++;
+            int x = Math.abs(r.nextInt(size)); // play around
+            int y = Math.abs(r.nextInt(size));
+
+            int j = 0;
+            while (j < curH) {
+                if ((history[j][0] == x) && (history[j][1] == y)) {
+                    matched = true;
+                }
+                j++;
+            }
+
+            if (matched) {
+                i--;
+                matched = false;
+//                continue;
+            } else {
+                map[x][y] = true;
+                history[i - 1][0] = x;
+                history[i - 1][1] = y;
+                curH++;
+            }
+        }
+
+        return map;
+    }
+
+    private void loadNextLevel() {
+        curLevel++;
+
+        currentMapAmount = 5;
+        currentMapSize = 5;
+        currentMap = createNewLevel(currentMapSize, currentMapAmount);
+
+        playerCanPressThisTile = new boolean[currentMapSize][currentMapSize];
+        for (int i = 0; i < currentMapSize; i++) {
+            for (int j = 0; j < currentMapSize; j++) {
+                playerCanPressThisTile[i][j] = true;
+            }
+        }
+        currentMapGuesses = 0;
+        currentMapCorrect = 0;
+        won = false;
+        lost = false;
+        field = new Field(context, currentMapSize, currentFieldSizePixels, paddingLeft, paddingTop, currentMap);
+    }
+
+    private void reloadLevel() {
+        for (int i = 0; i < currentMapSize; i++) {
+            for (int j = 0; j < currentMapSize; j++) {
+                playerCanPressThisTile[i][j] = true;
+            }
+        }
+        currentMapGuesses = 0;
+        currentMapCorrect = 0;
+        won = false;
+        lost = false;
+        // TODO: Mb just implement clearing current field
+        field = new Field(context, currentMapSize, currentFieldSizePixels, paddingLeft, paddingTop, currentMap);
+    }
+
     private void showMatrix() {
-        for (int i = 0; i < currentFieldSize; i++) {
+        for (int i = 0; i < currentMapSize; i++) {
             String s = "";
-            for (int j = 0; j < currentFieldSize; j++) {
+            for (int j = 0; j < currentMapSize; j++) {
                 if (currentMap[i][j]) {
                     s = s + " 1";
                 } else {
@@ -258,9 +245,9 @@ public class Game {
             Log.d("Matrix Map:", s);
         }
 
-        for (int i = 0; i < currentFieldSize; i++) {
+        for (int i = 0; i < currentMapSize; i++) {
             String s = "";
-            for (int j = 0; j < currentFieldSize; j++) {
+            for (int j = 0; j < currentMapSize; j++) {
                 if (playerCanPressThisTile[i][j]) {
                     s = s + " 1";
                 } else {
@@ -272,8 +259,8 @@ public class Game {
     }
 
     private void flipLeftTiles() {
-        for (int i = 0; i < currentFieldSize; i++) {
-            for (int j = 0; j < currentFieldSize; j++) {
+        for (int i = 0; i < currentMapSize; i++) {
+            for (int j = 0; j < currentMapSize; j++) {
                 if ((currentMap[i][j]) && (playerCanPressThisTile[i][j])) {
                     field.flip(j, i);
                 }
@@ -316,16 +303,13 @@ public class Game {
     }
 
     public void processClick(int x, int y) {
-        Log.d("pppp", "" + withinField(x, y));
-        Log.d("tttt", "" + touchEnabled);
-
         if (touchEnabled) {
             if (withinField(x, y)) {
-                int xWithinTile = (x - paddingLeft) % (currentFieldSizePixels / currentFieldSize);
-                int yWithinTile = (y - paddingTop) % (currentFieldSizePixels / currentFieldSize);
+                int xWithinTile = (x - paddingLeft) % (currentFieldSizePixels / currentMapSize);
+                int yWithinTile = (y - paddingTop) % (currentFieldSizePixels / currentMapSize);
 
-                int tileX = (x - xWithinTile - paddingLeft) / (currentFieldSizePixels / currentFieldSize);
-                int tileY = (y - yWithinTile - paddingTop) / (currentFieldSizePixels / currentFieldSize);
+                int tileX = (x - xWithinTile - paddingLeft) / (currentFieldSizePixels / currentMapSize);
+                int tileY = (y - yWithinTile - paddingTop) / (currentFieldSizePixels / currentMapSize);
 
                 Log.d("[Helper Memory Game] Clicked at tile: ", " " + tileX + " " + tileY); // index of the tile
 
@@ -338,7 +322,6 @@ public class Game {
 
                             if (field.containsCard(tileX, tileY)) {
                                 currentMapCorrect++;
-
                             }
                         }
                     }
@@ -348,7 +331,7 @@ public class Game {
     }
 
     private boolean indexWithinFieldBounds(int x, int y) {
-        return ((x < currentFieldSize) && (y < currentFieldSize) && (x >= 0) && (y >= 0));
+        return ((x < currentMapSize) && (y < currentMapSize) && (x >= 0) && (y >= 0));
     }
 
     private boolean withinField(int x, int y) {
@@ -357,6 +340,8 @@ public class Game {
     }
 
     public void changeParameters(int newH, int newW) {
+        Log.d("DebugLevel:", "ChangeParameters() is called");
+
         h = newH;
         w = newW;
 
