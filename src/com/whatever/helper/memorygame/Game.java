@@ -30,6 +30,8 @@ public class Game {
     private static final int STATE_GAME = 4;
     private static final int STATE_RESULTS_SHOWING = 5;
 
+    private final int levels[][];
+
     private boolean lost;
     private boolean won;
 
@@ -63,6 +65,9 @@ public class Game {
         won = false;
         touchEnabled = false;
 
+        levels = new int[12][2]; // 30 levels for now max
+        prepareLevels();
+
         if (h >= w) {
             currentFieldSizePixels = w - paddingSmall * 2;
             paddingLeft = paddingSmall;
@@ -74,6 +79,24 @@ public class Game {
         }
 
 //        field = new Field(context, 4, 100, paddingLeft, paddingTop, map1); // WRONG
+    }
+
+    private void prepareLevels() {
+        int size = 4;
+        int amount = 4;
+        boolean trigger = true;
+
+        for (int i = 0; i < 12; i++) {
+            levels[i][0] = size;
+            levels[i][1] = amount;
+
+            amount += 1;
+            if (trigger) {
+                size += 1;
+            }
+
+            trigger = !trigger;
+        }
     }
 
     private void update() {
@@ -157,13 +180,6 @@ public class Game {
     private boolean[][] createNewLevel(int size, int amount) {
         boolean map[][] = new boolean[size][size];
 
-//        map[1][0] = true;
-//        map[1][1] = true;
-//        map[1][2] = true;
-//        map[1][3] = true;
-//        map[1][4] = true;
-
-
         int history[][] = new int[amount][2];
         int curH = 0;
         boolean matched = false;
@@ -199,11 +215,12 @@ public class Game {
     }
 
     private void loadNextLevel() {
-        curLevel++;
-
-        currentMapAmount = 5;
-        currentMapSize = 5;
+        currentMapAmount = levels[curLevel][1];
+        currentMapSize = levels[curLevel][0];
         currentMap = createNewLevel(currentMapSize, currentMapAmount);
+        if (curLevel < 11) { // TODO: mb wrong, check
+            curLevel++;
+        }
 
         playerCanPressThisTile = new boolean[currentMapSize][currentMapSize];
         for (int i = 0; i < currentMapSize; i++) {
@@ -273,6 +290,11 @@ public class Game {
         p.setColor(context.getResources().getColor(R.color.helper_memory_game_lost));
         canvas.drawRect(paddingLeft + 100, paddingTop + 100,
                 paddingLeft + currentFieldSizePixels - 100, paddingTop + currentFieldSizePixels - 100, p);
+
+//        Paint paint = new Paint();
+//        paint.setColor(Color.WHITE);
+//        paint.setTextSize(300.0f);
+//        canvas.drawText("You lost", paddingLeft + 150, paddingTop + 150, paint);
     }
 
     private void renderWonScreen(Canvas canvas) {
