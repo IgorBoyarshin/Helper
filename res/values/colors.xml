@@ -11,14 +11,14 @@
     <color name="helper_main_welcome">#FF7F50</color>
 
     <color name="helper_memory_game_bg">#ccc</color>
-    <color name="helper_memory_game_desk">#c75841</color>
+    <color name="helper_memory_game_desk">#ff3f1907</color>
     <color name="helper_memory_game_border">#c7ad87</color>
 
-    <color name="helper_memory_game_tile">#13ec00</color>
-    <color name="helper_memory_game_no_card">#ff82cc36</color>
+    <color name="helper_memory_game_tile">#ffcc623b</color>
+    <color name="helper_memory_game_no_card">#ddff951c</color>
     <color name="helper_memory_game_card">#3b5eec</color>
-    <color name="helper_memory_game_lost">#aaff1111</color>
-    <color name="helper_memory_game_won">#993fca2b</color>
+    <color name="helper_memory_game_lost">#aaed0905</color>
+    <color name="helper_memory_game_won">#aa13ec00</color>
 
     <color name="helper_function_drawing_area_bg">#F7E7CE</color>
     <color name="helper_function_drawing_area_axes">#36454F</color>

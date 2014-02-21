@@ -91,7 +91,7 @@
       <file leaf-file-name="Loop.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/whatever/helper/memorygame/Loop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="31" selection-start="400" selection-end="400" vertical-scroll-proportion="0.0" vertical-offset="159" max-vertical-offset="748">
+            <state line="21" column="33" selection-start="402" selection-end="402" vertical-scroll-proportion="0.0" vertical-offset="159" max-vertical-offset="748">
               <folding />
             </state>
           </provider>
@@ -100,7 +100,7 @@
       <file leaf-file-name="Game.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/whatever/helper/memorygame/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="296" column="82" selection-start="9326" selection-end="9511" vertical-scroll-proportion="0.7426901" vertical-offset="2177" max-vertical-offset="2890">
+            <state line="229" column="52" selection-start="7236" selection-end="7236" vertical-scroll-proportion="0.60611206" vertical-offset="1683" max-vertical-offset="2754">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#update#0;class#Game#0" expanded="false" />
@@ -109,6 +109,7 @@
                 <element signature="method#reloadLevel#0;class#Game#0" expanded="false" />
                 <element signature="method#showMatrix#0;class#Game#0" expanded="false" />
                 <element signature="method#flipLeftTiles#0;class#Game#0" expanded="false" />
+                <element signature="method#renderLostScreen#0;class#Game#0" expanded="false" />
                 <element signature="method#renderWonScreen#0;class#Game#0" expanded="false" />
                 <element signature="method#render#0;class#Game#0" expanded="false" />
                 <element signature="method#processClick#0;class#Game#0" expanded="false" />
@@ -123,7 +124,7 @@
       <file leaf-file-name="Field.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/whatever/helper/memorygame/Field.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="24" selection-start="2100" selection-end="2100" vertical-scroll-proportion="0.0" vertical-offset="943" max-vertical-offset="1632">
+            <state line="24" column="19" selection-start="574" selection-end="574" vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="1632">
               <folding />
             </state>
           </provider>
@@ -141,7 +142,7 @@
       <file leaf-file-name="colors.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/values/colors.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="44" selection-start="800" selection-end="800" vertical-scroll-proportion="0.0" vertical-offset="93" max-vertical-offset="833">
+            <state line="19" column="45" selection-start="745" selection-end="745" vertical-scroll-proportion="0.0" vertical-offset="93" max-vertical-offset="833">
               <folding />
             </state>
           </provider>
@@ -187,12 +188,12 @@
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/src/com/whatever/helper/MainHelper.java" />
         <option value="$PROJECT_DIR$/src/com/whatever/helper/memorygame/MemoryGame.java" />
-        <option value="$PROJECT_DIR$/src/com/whatever/helper/memorygame/Field.java" />
-        <option value="$PROJECT_DIR$/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/src/com/whatever/helper/memorygame/Tile.java" />
         <option value="$PROJECT_DIR$/src/com/whatever/helper/memorygame/MemoryGameView.java" />
         <option value="$PROJECT_DIR$/src/com/whatever/helper/memorygame/Loop.java" />
+        <option value="$PROJECT_DIR$/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/src/com/whatever/helper/memorygame/Game.java" />
+        <option value="$PROJECT_DIR$/src/com/whatever/helper/memorygame/Field.java" />
       </list>
     </option>
   </component>
@@ -656,7 +657,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -670,7 +671,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3300813" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40162602" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43739837" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1026,37 +1027,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="44" selection-start="800" selection-end="800" vertical-scroll-proportion="0.0" vertical-offset="93" max-vertical-offset="833">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/whatever/helper/memorygame/Loop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="31" selection-start="400" selection-end="400" vertical-scroll-proportion="0.0" vertical-offset="159" max-vertical-offset="748">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/whatever/helper/memorygame/MemoryGameView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="39" column="5" selection-start="893" selection-end="893" vertical-scroll-proportion="0.0" vertical-offset="244" max-vertical-offset="1394">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/whatever/helper/memorygame/Field.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="24" selection-start="2100" selection-end="2100" vertical-scroll-proportion="0.0" vertical-offset="943" max-vertical-offset="1632">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/whatever/helper/memorygame/Tile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="31" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1598">
           <folding />
         </state>
       </provider>
@@ -1082,9 +1055,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/whatever/helper/memorygame/Tile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="31" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1598">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="45" selection-start="745" selection-end="745" vertical-scroll-proportion="0.0" vertical-offset="93" max-vertical-offset="833">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/whatever/helper/memorygame/Loop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="33" selection-start="402" selection-end="402" vertical-scroll-proportion="0.0" vertical-offset="159" max-vertical-offset="748">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/whatever/helper/memorygame/Field.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="19" selection-start="574" selection-end="574" vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="1632">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/whatever/helper/memorygame/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="296" column="82" selection-start="9326" selection-end="9511" vertical-scroll-proportion="0.7426901" vertical-offset="2177" max-vertical-offset="2890">
+        <state line="229" column="52" selection-start="7236" selection-end="7236" vertical-scroll-proportion="0.60611206" vertical-offset="1683" max-vertical-offset="2754">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#update#0;class#Game#0" expanded="false" />
@@ -1093,6 +1094,7 @@
             <element signature="method#reloadLevel#0;class#Game#0" expanded="false" />
             <element signature="method#showMatrix#0;class#Game#0" expanded="false" />
             <element signature="method#flipLeftTiles#0;class#Game#0" expanded="false" />
+            <element signature="method#renderLostScreen#0;class#Game#0" expanded="false" />
             <element signature="method#renderWonScreen#0;class#Game#0" expanded="false" />
             <element signature="method#render#0;class#Game#0" expanded="false" />
             <element signature="method#processClick#0;class#Game#0" expanded="false" />

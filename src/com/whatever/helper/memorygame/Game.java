@@ -53,7 +53,7 @@ public class Game {
         this.context = context;
         h = windowHeight;
         w = windowWidth;
-        paddingSmall = 50;
+        paddingSmall = 30;
         delayResultsShowing = 2000;
         delayBeforeLevel = 1000;
         delayShowing = 3000;
@@ -92,7 +92,9 @@ public class Game {
 
             amount += 1;
             if (trigger) {
-                size += 1;
+                if (size < 7) {
+                    size += 1;
+                }
             }
 
             trigger = !trigger;
@@ -288,8 +290,11 @@ public class Game {
     private void renderLostScreen(Canvas canvas) {
         Paint p = new Paint();
         p.setColor(context.getResources().getColor(R.color.helper_memory_game_lost));
-        canvas.drawRect(paddingLeft + 100, paddingTop + 100,
-                paddingLeft + currentFieldSizePixels - 100, paddingTop + currentFieldSizePixels - 100, p);
+//        canvas.drawRect(paddingLeft + 100, paddingTop + 100,
+//                paddingLeft + currentFieldSizePixels - 100, paddingTop + currentFieldSizePixels - 100, p);
+
+        canvas.drawRect(paddingLeft, paddingTop,
+                paddingLeft + currentFieldSizePixels, paddingTop + currentFieldSizePixels, p);
 
 //        Paint paint = new Paint();
 //        paint.setColor(Color.WHITE);
@@ -300,8 +305,10 @@ public class Game {
     private void renderWonScreen(Canvas canvas) {
         Paint p = new Paint();
         p.setColor(context.getResources().getColor(R.color.helper_memory_game_won));
-        canvas.drawRect(paddingLeft + 150, paddingTop + 150,
-                paddingLeft + currentFieldSizePixels - 150, paddingTop + currentFieldSizePixels - 150, p);
+//        canvas.drawRect(paddingLeft + 150, paddingTop + 150,
+//                paddingLeft + currentFieldSizePixels - 150, paddingTop + currentFieldSizePixels - 150, p);
+        canvas.drawRect(paddingLeft, paddingTop,
+                paddingLeft + currentFieldSizePixels, paddingTop + currentFieldSizePixels, p);
     }
 
     public void render(Canvas canvas) {

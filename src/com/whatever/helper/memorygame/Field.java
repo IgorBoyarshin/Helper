@@ -16,7 +16,7 @@ public class Field {
     private int tileSize;
     private int marginLeft;
     private int marginTop;
-    private final int borderSize = 10;
+    private final int borderSize = 8;
     private boolean map[][];
 
     private int lastFlipX;
