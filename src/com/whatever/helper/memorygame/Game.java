@@ -227,7 +227,7 @@ public class Game {
                                 delayStart = -1; // For later purposes
                             } else if (delayStart == -1) {
                                 delayStart = -3;
-//                                flipLeftTiles();
+                                flipLeftTiles();
                             }
                         }
                     }
@@ -235,6 +235,7 @@ public class Game {
                 break;
             case STATE_RESULTS_SHOWING:
                 if (delayStart == -1) {
+//                    showMatrix();
                     delayStart = System.currentTimeMillis();
                 } else if (System.currentTimeMillis() - delayStart > delayResultsShowing) {
                     delayStart = -1; // For later purposes
@@ -244,9 +245,33 @@ public class Game {
         }
     }
 
-    private void flipLeftTiles() {
-//        field.flip(0, 0);
+    private void showMatrix() {
+        for (int i = 0; i < currentFieldSize; i++) {
+            String s = "";
+            for (int j = 0; j < currentFieldSize; j++) {
+                if (currentMap[i][j]) {
+                    s = s + " 1";
+                } else {
+                    s = s + " 0";
+                }
+            }
+            Log.d("Matrix Map:", s);
+        }
 
+        for (int i = 0; i < currentFieldSize; i++) {
+            String s = "";
+            for (int j = 0; j < currentFieldSize; j++) {
+                if (playerCanPressThisTile[i][j]) {
+                    s = s + " 1";
+                } else {
+                    s = s + " 0";
+                }
+            }
+            Log.d("Matrix Press:", s);
+        }
+    }
+
+    private void flipLeftTiles() {
         for (int i = 0; i < currentFieldSize; i++) {
             for (int j = 0; j < currentFieldSize; j++) {
                 if ((currentMap[i][j]) && (playerCanPressThisTile[i][j])) {
@@ -306,10 +331,10 @@ public class Game {
 
                 if (indexWithinFieldBounds(tileX, tileY)) { // Check just in case out calculation were wrong
                     if (currentMapGuesses < currentMapAmount) {
-                        if (playerCanPressThisTile[tileX][tileY]) {
+                        if (playerCanPressThisTile[tileY][tileX]) {
                             field.flip(tileX, tileY);
                             currentMapGuesses++;
-                            playerCanPressThisTile[tileX][tileY] = false;
+                            playerCanPressThisTile[tileY][tileX] = false;
 
                             if (field.containsCard(tileX, tileY)) {
                                 currentMapCorrect++;
