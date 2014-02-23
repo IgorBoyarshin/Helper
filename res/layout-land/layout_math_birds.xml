@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/helper_mathbirds_button_bg"
+        android:id="@+id/helper_mathbirds_container">
+
+    <view
+            android:layout_weight="4"
+            class="com.whatever.helper.mathbirds.MathBirdsView"
+            android:id="@+id/helper_mathbirds_sky"
+            android:layout_width="match_parent"
+            android:layout_height="0px" />
+
+    <TableLayout
+            android:layout_weight="1"
+            android:id="@+id/helper_mathbirds_buttons"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0px">
+
+        <TableRow
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <Button
+                    android:textSize="@dimen/helper_mathbirds_textsize"
+
+                    android:textColor="@color/helper_mathbirds_button_text"
+                    android:text="@string/helper_mathbirds_button_1"
+                    android:id="@+id/helper_mathbirds_button_1"
+                    android:layout_weight="1"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"/>
+            <Button
+                    android:textSize="@dimen/helper_mathbirds_textsize"
+
+                    android:textColor="@color/helper_mathbirds_button_text"
+                    android:text="@string/helper_mathbirds_button_2"
+                    android:id="@+id/helper_mathbirds_button_2"
+                    android:layout_weight="1"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"/>
+            <Button
+                    android:textSize="@dimen/helper_mathbirds_textsize"
+
+                    android:textColor="@color/helper_mathbirds_button_text"
+                    android:text="@string/helper_mathbirds_button_3"
+                    android:id="@+id/helper_mathbirds_button_3"
+                    android:layout_weight="1"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"/>
+            <Button
+                    android:textSize="@dimen/helper_mathbirds_textsize"
+
+                    android:textColor="@color/helper_mathbirds_button_text"
+                    android:text="@string/helper_mathbirds_button_4"
+                    android:id="@+id/helper_mathbirds_button_4"
+                    android:layout_weight="1"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"/>
+            <Button
+                    android:textSize="@dimen/helper_mathbirds_textsize"
+
+                    android:textColor="@color/helper_mathbirds_button_text"
+                    android:text="@string/helper_mathbirds_button_5"
+                    android:id="@+id/helper_mathbirds_button_5"
+                    android:layout_weight="1"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"/>
+
+            <Button
+                    android:textSize="@dimen/helper_mathbirds_textsize"
+
+                    android:textColor="@color/helper_mathbirds_button_text"
+                    android:text="@string/helper_mathbirds_button_6"
+                    android:id="@+id/helper_mathbirds_button_6"
+                    android:layout_weight="1"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"/>
+            <Button
+                    android:textSize="@dimen/helper_mathbirds_textsize"
+
+                    android:textColor="@color/helper_mathbirds_button_text"
+                    android:text="@string/helper_mathbirds_button_7"
+                    android:id="@+id/helper_mathbirds_button_7"
+                    android:layout_weight="1"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"/>
+            <Button
+                    android:textSize="@dimen/helper_mathbirds_textsize"
+
+                    android:textColor="@color/helper_mathbirds_button_text"
+                    android:text="@string/helper_mathbirds_button_8"
+                    android:id="@+id/helper_mathbirds_button_8"
+                    android:layout_weight="1"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"/>
+            <Button
+                    android:textSize="@dimen/helper_mathbirds_textsize"
+
+                    android:textColor="@color/helper_mathbirds_button_text"
+                    android:text="@string/helper_mathbirds_button_9"
+                    android:id="@+id/helper_mathbirds_button_9"
+                    android:layout_weight="1"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"/>
+            <Button
+                    android:textSize="@dimen/helper_mathbirds_textsize"
+
+                    android:textColor="@color/helper_mathbirds_button_text"
+                    android:text="@string/helper_mathbirds_button_0"
+                    android:id="@+id/helper_mathbirds_button_0"
+                    android:layout_weight="1"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"/>
+            <Button
+                    android:textSize="@dimen/helper_mathbirds_textsize"
+                    android:textColor="@color/helper_mathbirds_button_text"
+                    android:text="@string/helper_mathbirds_button_d"
+                    android:id="@+id/helper_mathbirds_button_d"
+                    android:layout_weight="1"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"/>
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+            android:background="#1f1"
+            android:gravity="center"
+            android:text="Crappy"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0px"/>
+
+</LinearLayout>

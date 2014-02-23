@@ -1,8 +1,7 @@
 package com.whatever.helper.memorygame;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.graphics.*;
 import android.util.Log;
 import com.whatever.helper.R;
 
@@ -31,6 +30,9 @@ public class Game {
     private static final int STATE_RESULTS_SHOWING = 5;
 
     private final int levels[][];
+    private final int numOfLevels;
+    private final int maxMapSize;
+    private int winsInARow;
 
     private boolean lost;
     private boolean won;
@@ -43,29 +45,44 @@ public class Game {
     private boolean touchEnabled;
 
     private int curLevel;
+    private int curDifficultyLevel;
     private boolean currentMap[][];
     private int currentMapAmount;
     private boolean playerCanPressThisTile[][];
     private int currentMapGuesses;
     private int currentMapCorrect;
 
+    private final float VERSION;
+
+
+    private Bitmap richard;
+
     public Game(Context context, int windowHeight, int windowWidth) {
+        VERSION = 1.1f;
+
+        richard = BitmapFactory.decodeResource(context.getResources(),
+                R.drawable.richard);
+
         this.context = context;
         h = windowHeight;
         w = windowWidth;
         paddingSmall = 30;
-        delayResultsShowing = 2000;
+        delayResultsShowing = 5000;
         delayBeforeLevel = 1000;
         delayShowing = 3000;
         delayStart = -1;
+        curDifficultyLevel = 0;
         curLevel = 0;
+        winsInARow = 0;
         currentState = STATE_OFF;
         field = null;
         lost = false;
         won = false;
         touchEnabled = false;
 
-        levels = new int[12][2]; // 30 levels for now max
+        numOfLevels = 12;
+        maxMapSize = 7;
+        levels = new int[numOfLevels][2];
         prepareLevels();
 
         if (h >= w) {
@@ -86,13 +103,13 @@ public class Game {
         int amount = 4;
         boolean trigger = true;
 
-        for (int i = 0; i < 12; i++) {
+        for (int i = 0; i < numOfLevels; i++) {
             levels[i][0] = size;
             levels[i][1] = amount;
 
             amount += 1;
             if (trigger) {
-                if (size < 7) {
+                if (size < maxMapSize) {
                     size += 1;
                 }
             }
@@ -105,6 +122,7 @@ public class Game {
         switch (currentState) {
             case STATE_OFF:
                 currentState++;
+                // See processClick()
                 break;
             case STATE_LOAD_NEXT_LEVEL:
                 if (lost) {
@@ -145,10 +163,12 @@ public class Game {
                     if (!field.isFlipping()) {
                         if (currentMapCorrect == currentMapGuesses) {
                             won = true;
+                            winsInARow++;
                             currentState++;
                         } else {
                             if (delayStart == -3) {
                                 lost = true;
+                                winsInARow = 0;
                                 currentState++;
                                 delayStart = -1; // For later purposes
                             } else if (delayStart == -1) {
@@ -217,12 +237,13 @@ public class Game {
     }
 
     private void loadNextLevel() {
-        currentMapAmount = levels[curLevel][1];
-        currentMapSize = levels[curLevel][0];
+        currentMapAmount = levels[curDifficultyLevel][1];
+        currentMapSize = levels[curDifficultyLevel][0];
         currentMap = createNewLevel(currentMapSize, currentMapAmount);
-        if (curLevel < 11) { // TODO: mb wrong, check
-            curLevel++;
+        if (curDifficultyLevel < numOfLevels - 1) {
+            curDifficultyLevel++;
         }
+        curLevel++;
 
         playerCanPressThisTile = new boolean[currentMapSize][currentMapSize];
         for (int i = 0; i < currentMapSize; i++) {
@@ -238,11 +259,13 @@ public class Game {
     }
 
     private void reloadLevel() {
+        curLevel++;
         for (int i = 0; i < currentMapSize; i++) {
             for (int j = 0; j < currentMapSize; j++) {
                 playerCanPressThisTile[i][j] = true;
             }
         }
+        currentMap = createNewLevel(currentMapSize, currentMapAmount);
         currentMapGuesses = 0;
         currentMapCorrect = 0;
         won = false;
@@ -287,19 +310,40 @@ public class Game {
         }
     }
 
-    private void renderLostScreen(Canvas canvas) {
+    private void renderWelcomeScreen(Canvas canvas) {
         Paint p = new Paint();
-        p.setColor(context.getResources().getColor(R.color.helper_memory_game_lost));
-//        canvas.drawRect(paddingLeft + 100, paddingTop + 100,
-//                paddingLeft + currentFieldSizePixels - 100, paddingTop + currentFieldSizePixels - 100, p);
+        p.setColor(context.getResources().getColor(R.color.helper_memory_game_welcome));
 
         canvas.drawRect(paddingLeft, paddingTop,
                 paddingLeft + currentFieldSizePixels, paddingTop + currentFieldSizePixels, p);
 
-//        Paint paint = new Paint();
-//        paint.setColor(Color.WHITE);
-//        paint.setTextSize(300.0f);
-//        canvas.drawText("You lost", paddingLeft + 150, paddingTop + 150, paint);
+        Paint text = new Paint();
+        text.setColor(Color.BLACK);
+        text.setTextSize(80.0f);
+
+        canvas.drawText("Welcome to the", paddingLeft + 200, paddingTop + 180, text);
+        canvas.drawText("Memory Game v" + VERSION, paddingLeft + 150, paddingTop + 270, text);
+        canvas.drawText("Tap to start the game!", paddingLeft + 100, paddingTop + 550, text);
+    }
+
+    private void renderLostScreen(Canvas canvas) {
+        Paint p = new Paint();
+        p.setColor(context.getResources().getColor(R.color.helper_memory_game_lost_e));
+//        p.setColor(Color.WHITE);
+
+        canvas.drawRect(paddingLeft, paddingTop,
+                paddingLeft + currentFieldSizePixels, paddingTop + currentFieldSizePixels, p);
+
+        Paint text = new Paint();
+//        text.setColor(Color.WHITE);
+        text.setColor(Color.RED);
+        text.setTextSize(80.0f);
+        canvas.drawText("Try again! You can do it!", paddingLeft + 60, paddingTop + 80, text);
+        canvas.drawText("Your difficulty is " + curDifficultyLevel + "!", paddingLeft + 10, paddingTop + 210, text);
+        canvas.drawText("You played " + curLevel + " levels!", paddingLeft + 10, paddingTop + 300, text);
+//        canvas.drawText("You won " + winsInARow + " games in a row!", paddingLeft + 10, paddingTop + 250, text);
+
+//        canvas.drawBitmap(richard, paddingLeft + currentFieldSizePixels/2 - 80, paddingTop + currentFieldSizePixels - 200, null);
     }
 
     private void renderWonScreen(Canvas canvas) {
@@ -309,6 +353,14 @@ public class Game {
 //                paddingLeft + currentFieldSizePixels - 150, paddingTop + currentFieldSizePixels - 150, p);
         canvas.drawRect(paddingLeft, paddingTop,
                 paddingLeft + currentFieldSizePixels, paddingTop + currentFieldSizePixels, p);
+
+        Paint text = new Paint();
+        text.setColor(Color.BLACK);
+        text.setTextSize(80.0f);
+        canvas.drawText("You won! Amazing play!", paddingLeft + 90, paddingTop + 80, text);
+        canvas.drawText("Your difficulty is " + curDifficultyLevel + "!", paddingLeft + 10, paddingTop + 210, text);
+        canvas.drawText("You played " + curLevel + " levels!", paddingLeft + 10, paddingTop + 300, text);
+        canvas.drawText("You won " + winsInARow + " games in a row!", paddingLeft + 10, paddingTop + 390, text);
     }
 
     public void render(Canvas canvas) {
@@ -317,6 +369,15 @@ public class Game {
         Paint bg = new Paint();
         bg.setColor(context.getResources().getColor(R.color.helper_memory_game_bg));
         canvas.drawRect(0, 0, w, h, bg);
+
+        // Richard
+
+        canvas.drawBitmap(richard, 50, 50, null);
+        Paint text = new Paint();
+        text.setColor(Color.BLACK);
+        text.setTextSize(40.0f);
+        canvas.drawText("May the force", 50, 220, text);
+        canvas.drawText("Be with you!", 50, 270, text);
 
         // Field
         if (field != null) {
@@ -329,9 +390,16 @@ public class Game {
         } else if (won) {
             renderWonScreen(canvas);
         }
+
+        if (currentState == STATE_OFF) {
+//            renderWelcomeScreen(canvas);
+        }
     }
 
     public void processClick(int x, int y) {
+//        if (currentState == STATE_OFF) {
+//            currentState++;
+//        }
         if (touchEnabled) {
             if (withinField(x, y)) {
                 int xWithinTile = (x - paddingLeft) % (currentFieldSizePixels / currentMapSize);

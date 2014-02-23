@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import com.whatever.helper.R;
 
 /**
@@ -12,6 +13,9 @@ import com.whatever.helper.R;
  */
 public class MathBirds extends Fragment implements View.OnClickListener {
     private MathBirdsView mathBirdsView;
+    private LinearLayout buttons;
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

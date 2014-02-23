@@ -4,6 +4,9 @@
     <string name="app_name">Helper</string>
     <string name="action_settings">Settings</string>
 
+    <string name="helper_main_richard_says">Remember me..? ; )</string>
+    <string name="helper_main_richard_says_2">Ima brb soon!</string>
+
     <string name="helper_main_welcome">Welcome to the Helper</string>
     <string name="helper_main_input_hint">Type command here</string>
     <string name="helper_main_input_button">Execute</string>
@@ -38,6 +41,7 @@
     <string name="helper_mathbirds_button_8">8</string>
     <string name="helper_mathbirds_button_9">9</string>
     <string name="helper_mathbirds_button_0">0</string>
+    <string name="helper_mathbirds_button_d">|=</string>
 
     <string name="helper_function_function_hint">Func</string>
     <string name="helper_function_draw_button">Draw</string>
